@@ -1,0 +1,150 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 1280px;
+  padding: 2rem;
+}
+
+.profile {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  text-align: center;
+}
+
+.profile h2 {
+  margin: 0;
+}
+
+.header {
+  display: flex;
+  flex-direction: column;
+  width: 12em;
+  margin-bottom: 1em;
+}
+
+.date {
+  text-align: center;
+}
+
+.control {
+  display: flex;
+  justify-content: space-between;
+}
+
+.loader {
+  height: 24px;
+  margin-bottom: 1em;
+}
+
+.table {
+  border-spacing: 0.5em;
+}
+
+.table th.dayOff {
+  background-color: #f5b91d;
+  color: #fff;
+}
+
+.table th,
+.table td {
+  position: relative;
+  border: 1px solid transparent;
+  background-color: #1a1a1a;
+  padding: 0.7em;
+  border-radius: 8px;
+  transition: border-color 0.25s, background-color 0.25s;
+}
+
+.table th:hover,
+.table td:hover {
+  border-color: #646cff;
+}
+
+.table tr:hover td:first-child,
+.table td:last-child,
+.table th:last-child {
+  background-color: #202020;
+}
+
+.indicator {
+  position: relative;
+  flex-basis: 1rem;
+  height: 1rem;
+  width: 1rem;
+  margin: 0 auto;
+  background-color: #d1d1d6;
+  color: #d1d1d6;
+  border-radius: 50%;
+  /* border: 2px solid; */
+}
+
+.indicator.present {
+  background-color: #37d737;
+}
+
+.indicator.absent {
+  background-color: #f5b91d;
+}
+
+.indicator.alpha {
+  background-color: #ec0b1b;
+}
+
+.tooltip {
+  font-weight: 600;
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  translate: -50%;
+  background-color: #000;
+  color: #fff;
+  white-space: nowrap;
+  padding: 0.25rem 0.5rem;
+  border-radius: 8px;
+  z-index: 100;
+  visibility: hidden;
+  opacity: 0;
+  transition: opacity 0.5s;
+}
+
+.tooltip::before {
+  content: '';
+  position: absolute;
+  left: 50%;
+  bottom: 100%;
+  translate: -50%;
+  border: 0.5rem solid;
+  border-color: #0000 #0000 #000 #0000;
+}
+
+table td:hover .tooltip {
+  bottom: -90%;
+  visibility: visible;
+  opacity: 1;
+}
+
+table th:hover .tooltip {
+  bottom: -90%;
+  visibility: visible;
+  opacity: 1;
+}
+
+@media (prefers-color-scheme: light) {
+  .table th,
+  .table td {
+    background-color: #f9f9f9;
+  }
+
+  .table tr:hover td:first-child,
+  .table td:last-child,
+  .table th:last-child,
+  .table th.hover {
+    background-color: #f0f0f0;
+  }
+
+  .table th.dayOff {
+    background-color: #f5b91d;
+  }
+}
