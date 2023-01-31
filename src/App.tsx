@@ -22,6 +22,7 @@ function App() {
   const attendances = useQuery({
     queryKey: ['attendance', { year: currentYear, month: currentMonth }],
     queryFn: () => getAttendance({ year: currentYear, month: currentMonth }),
+    refetchOnWindowFocus: false,
   });
 
   function handlePrev() {
